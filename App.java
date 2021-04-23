@@ -99,7 +99,7 @@ public class App {
                         inserirDisciplina();
                         break;
                         case 2:
-                        System.out.println("Eliminar Formando");
+                        eliminarDisciplina();
                         break;
                         case 3:
                         for (Disciplinas asDisciplinas : asDisciplinas) {
@@ -128,7 +128,7 @@ public class App {
                     for (DisciplinasCurso asDisciplinasCurso : asDisciplinasCurso) {
                         System.out.println(asDisciplinasCurso.toString());
                     }
-                }
+                
             } else {
                 System.out.println("Nao existe um curso com esse id");
             }
@@ -145,16 +145,13 @@ public class App {
             System.out.println("ID do Formando:");
             int id = sc.nextInt();
             if (id > 0 && id <= osFormandos.size()) {
-                if (osFormandos.size() == 0) {
-                    System.out.println("Nao ha Formandos");
 
-                } else {
                    asInscricoes.remove(id - 1);
                     System.out.println("Formando com o id " + id + " foi removido");
                     for (Inscricoes asInscricoes : asInscricoes) {
                         System.out.println(asInscricoes.toString());
                     }
-                }
+                
             } else {
                 System.out.println("Nao existe um formando com esse id");
             }
@@ -185,7 +182,7 @@ public class App {
                     for (Formando f : osFormandos) {
                         System.out.println(f.toString());
                     }
-                }
+                
             } else {
                 System.out.println("Nao existe um Formandos com esse id");
             }
@@ -215,12 +212,42 @@ public class App {
                         for (Cursos c : osCursos) {
                             System.out.println(c.toString());
                         }
-                    }
+                    
                 } else {
                     System.out.println("Nao existe um curso com esse id");
                 }
             }
             }
+            private static void eliminarDisciplina(){
+                Disciplinas disciplinas = new Disciplinas();
+                if (osCursos.size() == 0) {
+                    System.out.println("Não há disciplinas!");
+                } else {
+                    Scanner sc = new Scanner(System.in);
+                    for (Disciplinas asDisciplinas : asDisciplinas) {
+                        System.out.println(asDisciplinas.toString());
+                    }
+                    System.out.println("ID da disciplina:");
+                    int id = sc.nextInt();
+                    if (id > 0 && id <= asDisciplinas.size()) {
+
+                            asDisciplinas.remove(id - 1);
+                            idDisciplina = 1;
+                            int y = asDisciplinas.size();
+                            for (int x = 1; x < y + 1; x++) {
+                                disciplinas = asDisciplinas.get(x - 1);
+                                disciplinas.setIdDisciplina(idDisciplina++);
+                            }
+                            System.out.println("Disciplina com o id " + id + " foi removida");
+                            for (Disciplinas d : asDisciplinas) {
+                                System.out.println(d.toString());
+                            }
+                        
+                    } else {
+                        System.out.println("Nao existe uma Disciplina com esse id");
+                    }
+                }
+                }
     private static void inserirDisciplina(){
         Scanner sc = new Scanner(System.in);
         Disciplinas disciplina = new Disciplinas();
@@ -379,3 +406,4 @@ public class App {
         asDisciplinasCurso.add(inscricao);
     }
 }
+
