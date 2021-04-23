@@ -122,10 +122,7 @@ public class App {
             System.out.println("ID do Curso:");
             int id = sc.nextInt();
             if (id > 0 && id <= osCursos.size()) {
-                if (osCursos.size() == 0) {
-                    System.out.println("Nao ha Cursos");
 
-                } else {
                    asDisciplinasCurso.remove(id - 1);
                     System.out.println("Curso com o id " + id + " foi removido");
                     for (DisciplinasCurso asDisciplinasCurso : asDisciplinasCurso) {
@@ -176,10 +173,7 @@ public class App {
             System.out.println("ID do Formando:");
             int id = sc.nextInt();
             if (id > 0 && id <= osFormandos.size()) {
-                if (osFormandos.size() == 0) {
-                    System.out.println("Nao ha Formandos!");
 
-                } else {
                     osFormandos.remove(id - 1);
                     idFormando = 1;
                     int y = osFormandos.size();
@@ -209,10 +203,7 @@ public class App {
                 System.out.println("ID do curso:");
                 int id = sc.nextInt();
                 if (id > 0 && id <= osCursos.size()) {
-                    if (osCursos.size() == 0) {
-                        System.out.println("Nao ha Cursos com o id pedido");
-    
-                    } else {
+
                         osCursos.remove(id - 1);
                         idCurso = 1;
                         int y = osCursos.size();
